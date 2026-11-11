@@ -1,0 +1,39 @@
+name: skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Shared rules and templates are in sync
+        run: python scripts/sync_shared.py --check
+
+      - name: Skills follow the format
+        run: python scripts/validate.py
+
+      - name: Official Agent Skills validator (pinned)
+        run: |
+          pip install skills-ref==0.1.1
+          for d in skills/*/; do agentskills validate "$d"; done
+
+      - name: Build one zip per skill
+        run: python scripts/build_zips.py
+
+      - name: Upload zips
+        uses: actions/upload-artifact@v4
+        with:
+          name: skill-zips
+          path: dist/*.zip
