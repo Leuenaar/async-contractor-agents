@@ -1,0 +1,44 @@
+{
+  "name": "async-contractor-agents",
+  "owner": {
+    "name": "Harva Heru"
+  },
+  "metadata": {
+    "description": "Claude skills for async AI automation work",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "async-contractor-skills",
+      "description": "Find work that fits, scope it, break it before it ships, and back every claim with evidence. Human approval on every outgoing action.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/break-log-writer",
+        "./skills/break-tester",
+        "./skills/build-director",
+        "./skills/buyer-psychology",
+        "./skills/case-study-writer",
+        "./skills/chatbot-red-teamer",
+        "./skills/competitor-map",
+        "./skills/constraint-strategist",
+        "./skills/demo-storyboarder",
+        "./skills/devils-advocate",
+        "./skills/evidence-auditor",
+        "./skills/fact-checker",
+        "./skills/form-filler",
+        "./skills/handover-writer",
+        "./skills/humanizer",
+        "./skills/job-screener",
+        "./skills/market-demand",
+        "./skills/outreach-drafter",
+        "./skills/retest-monitor",
+        "./skills/scope-writer",
+        "./skills/security-reviewer",
+        "./skills/segment-scout",
+        "./skills/tracker-keeper",
+        "./skills/upwork-proposal"
+      ]
+    }
+  ]
+}
