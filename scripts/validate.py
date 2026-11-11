@@ -21,7 +21,7 @@ SKILLS = ROOT / "skills"
 NAME_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.S)
 LINK_RE = re.compile(r"\]\(([^)#\s]+)\)")
-EM_DASH = "—"
+EM_DASH = chr(0x2014)
 INLINE_CODE = re.compile(r"`[^`\n]*`")
 
 
